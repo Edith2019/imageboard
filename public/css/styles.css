@@ -1,0 +1,303 @@
+* {
+    background-color: teal;
+    margin: 0px;
+    font-family: sans-serif;
+    outline: none;
+}
+
+/* ///// header ///// */
+.menu {
+    height: 100px;
+    width: auto;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.Ex {
+    margin-left: 20px;
+    color: white;
+    background: none;
+    font-size: 50px;
+}
+form {
+    background: none;
+
+    margin-left: 20px;
+}
+::placeholder {
+    color: white;
+    padding-left: 10px;
+    font-size: 12px;
+}
+.input {
+    color: black;
+    font-style: white;
+    border: black solid 1px;
+    width: 140px;
+    height: 30px;
+    border-radius: 30px;
+    margin-left: 20px;
+    margin: 5px;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    background: teal;
+    border: teal solid 2px;
+}
+
+.input:hover {
+    background: black;
+    color: teal;
+}
+
+.inputfile {
+    margin-left: 20px;
+    border: none;
+    border: solid 1px black;
+    padding: 0px;
+    font: white;
+}
+
+button {
+    margin: 20px;
+    color: white;
+    font-style: white;
+    border: teal solid 2px;
+    width: 140px;
+    height: 30px;
+    border-radius: 30px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: black;
+    color: teal;
+}
+/* ///intro///// */
+
+.explanations {
+    text-align: center;
+    margin-top: 2%;
+}
+
+/* /////// cards ///////// */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+}
+
+.card {
+    border: black 1px solid;
+    width: 250px;
+    height: 350px;
+    background-color: black;
+    overflow: hidden;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.imgpar {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+
+    margin-top: 25px;
+}
+.imgpar:hover .img,
+.imgpar:focus .img {
+    transform: scale(1.2);
+}
+
+.title {
+    margin-top: 20px;
+    background-color: black;
+    color: teal;
+    cursor: pointer;
+}
+
+/* //// modal ////// */
+.showModalCss {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: auto;
+    left: 0;
+    z-index: 5;
+    background-color: black;
+    padding-left: 20px;
+    overflow: visible;
+    padding-bottom: 100vh;
+}
+
+.imgComments {
+    margin-top: 6px;
+    margin-bottom: 30px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    z-index: 90;
+}
+
+.writtingComments {
+    display: flex;
+    flex-direction: column;
+    background: none;
+}
+
+.nameButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: black;
+}
+
+.addComm {
+    color: white;
+    background-color: black;
+    z-index: 2;
+    padding-left: 5px;
+}
+
+.inputCommentsUser {
+    width: 200px;
+    height: 25px;
+    margin-left: 5px;
+}
+
+.inputCommentsText {
+    width: 700px;
+    height: 100px;
+    margin-bottom: 30px;
+    text-align: left;
+    margin-left: 5px;
+}
+
+.closemodal {
+    padding: 30px;
+    font-size: 30px;
+    text-align: right;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    position: fixed;
+    margin-left: 90%;
+    margin-top: 2%;
+}
+
+.info {
+    color: black;
+    color: white;
+    text-align: center;
+}
+
+.ttmodal {
+    font-style: italic;
+    background-color: black;
+}
+
+.titleCom {
+    background-color: black;
+}
+
+.ded {
+    background-color: black;
+}
+
+.textcommented {
+    margin-bottom: 30px;
+}
+
+.commentsection {
+    margin-bottom: 30px;
+    background-color: black;
+}
+
+.space {
+    height: 40px;
+    background-color: black;
+}
+
+#loadmore {
+    visibility: visible;
+}
+
+.prevnext {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 40px;
+    background: none;
+    color: white;
+    font-size: 40px;
+    width: 90%;
+    position: fixed;
+    margin-top: 12%;
+}
+
+.prev {
+    background: none;
+    cursor: pointer;
+    color: white;
+}
+
+.nex {
+    background: none;
+    cursor: pointer;
+    color: white;
+}
+
+.commentsection {
+    background-color: black;
+    color: white;
+    border: 1px solid teal;
+    width: 500px;
+    margin: 10px;
+    padding: 10px;
+}
+.usercommented {
+    background-color: black;
+    color: teal;
+}
+
+.textcommented {
+    background-color: black;
+}
+
+.createdatcom {
+    background-color: black;
+    font-style: italic;
+}

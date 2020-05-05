@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+    <title>ImageBoard</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+
+<body>
+    <div id ='main'>
+    <div class="menu">
+<h1 class="Ex">UFOs</h1>
+        <form>
+            <input v-model="title" type="text" name= "title" placeholder="title" class="input">
+            <input  v-model="description" type="text" name= "description" placeholder="description" class="input">
+            <input v-model="userName" type="text" name= "userName" placeholder="username" class="input">
+            <input @change="handleChange" type="file" name= "file" accept="image/*" class="inputfile" >
+            <button @click="handleClick" class="button">submit</button>
+        </form>
+    
+    </div>
+<h1 class="explanations">Welcome to UFOs images uploader. This is a space to share your best UFOs' pictures and interact with your community.</h1>
+    <div class="cards" >
+            <div class="loop" v-for='card in cards' >
+                <div class="card">
+                     <div class="imgpar" >
+                    <a class="title" :href="'#' + card.id" >
+                         <img class="img" v-bind:src="card.url"> 
+                    </div>                
+                         <div class="title" >{{card.title}}</div> 
+                  </a>
+                <button class="imagedelete" @click="deleteImage(card.id)"> Delete </button>
+            </div>
+        </div>
+          <div class="morecards" v-if="newcards"  v-bind:src="morecards.url" > {{morecards}} </div>     
+     </div>
+   <button @click="loadMoreImages" id="loadmore" > more UFOs... </button>
+
+<modal 
+v-if="cardId" 
+v-bind:card="cardId" 
+v-bind:title="title"
+v-bind:description="description"
+v-bind:username="userName"
+v-bind:url="file"
+v-bind:usercomments="usercomments"
+v-bind:usercomments="textcomments"
+v-bind:comments="comments"
+v-on:changed="closeModalClick"
+>
+</modal>
+</div>
+
+<script id="modal-template" type="text/x-template">
+    <div class="showModalCss">
+        <p class="closemodal" @click="changed" >x</p>
+        <br/>
+        <div class="prevnext">
+         <a :href="'#' + previous" class="prev" > <- </a> <a :href="'#' + next" class="nex" > -> </a>
+        </div>
+        <img class="imgComments" v-bind:src="url"/>
+        <div class="info">
+            <div class="titleCom" >title: {{title}}  -  Description: {{description}}</div> 
+            <div class="ded">  user: {{username}}</div>
+             <div class="ttmodal"> date: {{createdat}} </div>
+        </div>
+        <br/>
+        <h2 class="addComm" id="letter"> Add a comment </h2>
+        <div class="writtingComments">
+            <div class="nameButton"> 
+        <input v-model="usercomments" type="text" name="usercomments" class="inputCommentsUser" placeholder="user name" /> 
+           <button @click="handleCommentClick" >submit</button> 
+            </div> 
+             <input v-model="textcomments" type="text" name="textcomments" class="inputCommentsText" placeholder="comment" /> 
+        </div>
+            <div class="commentsection" v-for='comment in comments' >
+                <div  class="usercommented" > user: {{comment.usercomments}}</div>
+                <div class= "textcommented"> comments: {{comment.textcomments}} </div>
+                <div class= "createdatcom"> created: {{comment.created_at}} </div>
+            </div>
+    </div>
+</script>
+
+    <script src="/js/vue.js"></script>
+    <script src="/js/axios.min.js"></script>
+    <script src="/js/component.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
