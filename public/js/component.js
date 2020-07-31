@@ -30,7 +30,6 @@ Vue.component('modal', {
         console.log("self card", self.card);
         this.showCard();
     },
-// testing
     methods: {
 
         showCard: function () {
